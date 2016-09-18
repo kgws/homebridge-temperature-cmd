@@ -37,7 +37,7 @@ TemperatureCMD.prototype = {
                 callback(error);
             } else {
                 this.log('command function succeeded!');
-                var res =  Math.round(stdout * 10) /10;
+                var res =  Math.round(stdout * 100) /100;
                 this.log(res);
                 callback(null, res);
             }
