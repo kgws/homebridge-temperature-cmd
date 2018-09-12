@@ -1,5 +1,5 @@
 # homebridge-symo-cmd
-homebridge-plugin for Your PC Command with Apple-Homekit.(by node.js child_process.exec())
+homebridge-plugin for a quick and easy way to get readings from a Fronius Symo
 
 Inspired by homebridge-temperature-cmd
 
@@ -11,6 +11,7 @@ Inspired by homebridge-temperature-cmd
 
 # Configuration
 Configuration sample:
+(you can make more accessories and just add another php file for that, eg. if you want Year Total, Day Total and Current Watts.
 
 ```
 "accessories": [
