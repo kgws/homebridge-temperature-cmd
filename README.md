@@ -17,12 +17,14 @@ Configuration sample:
     {
         "accessory": "SymoCMD",
         "name": "Current kWh",
-        "command": "curl -sb -H http://localhost/watt.php"
+        "command": "curl -sb -H http://whatever/path/you/want/watt.php"
     }
 ]
 
 
-Also! Needs php and/or other script that works as bridge from the Fronius inverter. I used som dirty-simple PHP;
+---
+Also! Needs php and/or other script that works as bridge from the Fronius inverter.
+I used som dirty-simple PHP for the 'watt.php';
 
 <?php
 $inverterDataURL = "http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi";
