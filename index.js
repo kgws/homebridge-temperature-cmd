@@ -8,21 +8,21 @@ var temperature = 0;
 module.exports = function (homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
-    homebridge.registerAccessory("homebridge-temperature-cmd", "TemperatureCMD", TemperatureCMD);
+    homebridge.registerAccessory("homebridge-symo-cmd", "SymoCMD", SymoCMD);
 }
 
-function TemperatureCMD(log, config) {
+function SymoCMD(log, config) {
     this.log = log;
 
     // url info
     this.name = config["name"];
-    this.manufacturer = config["manufacturer"] || "Luca Manufacturer";
-    this.model = config["model"] || "Luca Model";
-    this.serial = config["serial"] || "Luca Serial";
+    this.manufacturer = config["manufacturer"] || "@magnerholt";
+    this.model = config["model"] || "Fronius Symo";
+    this.serial = config["serial"] || "1228";
     this.command = config["command"];
 }
 
-TemperatureCMD.prototype = {
+SymoCMD.prototype = {
     cmdRequest: function(cmd, callback) {
         exec(cmd,function(error, stdout, stderr) {
             callback(error, stdout, stderr)
