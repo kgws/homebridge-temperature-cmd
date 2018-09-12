@@ -33,7 +33,7 @@ $inverterDataURL = "http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcg
 $inverterJSON = file_get_contents($inverterDataURL);
 $inverterData = json_decode($inverterJSON, true);
 $total = $inverterData["Body"]["Data"]["Site"]["E_Total"]/1000;
-$current = $inverterData["Body"]["Data"]["Site"]["P_PV"]/1000;
-$day = $inverterData["Body"]["Data"]["Site"]["E_Day"];
+$current = $inverterData["Body"]["Data"]["Site"]["P_PV"];
+$day = $inverterData["Body"]["Data"]["Site"]["E_Day"]/1000;
 echo '' . print_r($current, true) . '';
 ?>
