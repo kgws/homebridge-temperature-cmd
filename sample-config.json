@@ -12,9 +12,9 @@
 
     "accessories": [
         {
-            "accessory": "TemperatureCMD",
-            "name": "Living Room Temperature",
-            "command": "sudo /usr/local/bin/temper | cut -d ',' -f 2"
+            "accessory": "SymoCMD",
+            "name": "Watts being produced",
+            "command": "curl -sb -H http://localhost/watt.php"
         }
     ]
 }
