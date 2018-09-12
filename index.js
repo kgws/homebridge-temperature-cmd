@@ -1,6 +1,9 @@
 var Service, Characteristic;
 var exec = require("child_process").exec;
 
+const DEF_MIN_LUX = 0,
+      DEF_MAX_LUX = 10000,
+      
 var temperatureService;
 var command;
 var temperature = 0;
@@ -20,6 +23,8 @@ function SymoCMD(log, config) {
     this.model = config["model"] || "Fronius Symo";
     this.serial = config["serial"] || "1228";
     this.command = config["command"];
+    this.minLux = config["min_lux"] || DEF_MIN_LUX;
+    this.maxLux = config["max_lux"] || DEF_MAX_LUX;
 }
 
 SymoCMD.prototype = {
@@ -49,22 +54,21 @@ SymoCMD.prototype = {
         callback(); // success
     },
 
-    getServices: function() {
-        var services = [],
-            informationService = new Service.AccessoryInformation();
+getServices: function () {
+      this.informationService = new Service.AccessoryInformation();
+      this.informationService
+      .setCharacteristic(Characteristic.Manufacturer, this.manufacturer)
+      .setCharacteristic(Characteristic.Model, this.model)
+      .setCharacteristic(Characteristic.SerialNumber, this.serial);
 
-        informationService
-            .setCharacteristic(Characteristic.Manufacturer, this.manufacturer)
-            .setCharacteristic(Characteristic.Model, this.model)
-            .setCharacteristic(Characteristic.SerialNumber, this.serial);
-        services.push(informationService);
-
-        temperatureService = new Service.TemperatureSensor(this.name);
-        temperatureService
-            .getCharacteristic(Characteristic.CurrentTemperature)
-            .on('get', this.getState.bind(this));
-        services.push(temperatureService);
-
-        return services;
-    }
+      this.lightLevelService = new Service.LightSensor(this.name);
+      this.lightLevelService
+         .getCharacteristic(Characteristic.CurrentAmbientLightLevel)
+         .on('get', this.getState.bind(this))
+         .setProps({
+             minValue: this.minLux,
+             maxValue: this.maxLux
+         });
+      return [this.informationService, this.lightLevelService];
+   }
 };
