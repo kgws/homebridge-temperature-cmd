@@ -11,7 +11,8 @@ Inspired by homebridge-temperature-cmd
 
 # Configuration
 Configuration sample:
-(you can make more accessories and just add another php file for that, eg. if you want Year Total, Day Total and Current Watts.
+(you can add more accessories of SymoCMD in the config.json for homebridge 
+and just add another php file for that, eg. if you want Year Total, Day Total and Current Watts.
 
 ```
 "accessories": [
