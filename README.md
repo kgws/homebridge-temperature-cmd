@@ -1,4 +1,4 @@
-# homebridge-temperature-cmd
+# homebridge-symo-cmd
 homebridge-plugin for Your PC Command with Apple-Homekit.(by node.js child_process.exec())
 
 # Installation
@@ -14,9 +14,9 @@ Configuration sample:
 ```
 "accessories": [
     {
-        "accessory": "TemperatureCMD",
-        "name": "Living Room Temperature",
-        "command": "sudo /usr/local/bin/temper | cut -d ',' -f 2"
+        "accessory": "SymoCMD",
+        "name": "Current kWh",
+        "command": "curl -sb -H http://localhost/watt.php"
     }
 ]
 
