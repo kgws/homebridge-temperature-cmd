@@ -1,4 +1,4 @@
-# homebridge-symo-cmd
+# homebridge-symo-cmd - WIP!
 homebridge-plugin for Your PC Command with Apple-Homekit.(by node.js child_process.exec())
 
 # Installation
@@ -20,6 +20,3 @@ Configuration sample:
     }
 ]
 
-
-
-# SERIOUS WORK IN PROGRESS!
