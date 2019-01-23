@@ -27,7 +27,7 @@ just copy the first accesory and rename it eg. if you want Year Total (E_Year), 
         "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_Year'"
     }
 ]
-
+```
 
 ---
 THIS PLUGIN REQUIRES curl AND jq TO BE INSTALLED.
