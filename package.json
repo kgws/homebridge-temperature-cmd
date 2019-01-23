@@ -1,7 +1,7 @@
 {
   "name": "homebridge-symo-cmd",
-  "version": "0.0.4",
-  "description": "Quick and easy way to ger Fronius Symo reading to homebridge.",
+  "version": "0.0.5",
+  "description": "Quick and easy way to get Fronius Symo reading to homebridge.",
   "license": "ISC",
   "keywords": [
     "homebridge-plugin"
