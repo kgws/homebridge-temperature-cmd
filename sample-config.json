@@ -14,7 +14,7 @@
         {
             "accessory": "SymoCMD",
             "name": "Watts being produced",
-            "command": "curl -sb -H http://localhost/watt.php"
+            "command": "curl -s http://10.0.1.8/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_PV'"
         }
     ]
 }
