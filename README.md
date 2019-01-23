@@ -7,7 +7,8 @@ Inspired by homebridge-temperature-cmd
 
 1. Install homebridge using: sudo npm install -g homebridge
 2. Install this plugin using: sudo npm install -g homebridge-symo-cmd
-3. Update your configuration file. See sample-config.json in this repository for a sample.
+3. Make sure that curl and jq are istalled.
+4. Update your configuration file. See sample-config.json in this repository for a sample.
 
 # Configuration
 
@@ -27,8 +28,3 @@ just copy the first accesory and rename it eg. if you want Year Total (E_Year), 
         "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_Year'"
     }
 ]
-```
-
----
-THIS PLUGIN REQUIRES curl AND jq TO BE INSTALLED.
----
