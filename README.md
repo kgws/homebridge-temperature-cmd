@@ -10,30 +10,25 @@ Inspired by homebridge-temperature-cmd
 3. Update your configuration file. See sample-config.json in this repository for a sample.
 
 # Configuration
-Configuration sample:
-(you can add more accessories of SymoCMD in the config.json for homebridge 
-and just add another php file for that, eg. if you want Year Total, Day Total and Current Watts.
+
+You can add more accessories of SymoCMD in the config.json for homebridge 
+just copy the first accesory and rename it eg. if you want Year Total (E_Year), Day Total (E_Day) and Current Watts (E_PV)
 
 ```
 "accessories": [
     {
         "accessory": "SymoCMD",
         "name": "Current kWh",
-        "command": "curl -sb -H http://whatever/path/you/want/watt.php"
+        "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_PV'"
+    },
+    {
+        "accessory": "SymoCMD",
+        "name": "Year total",
+        "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_Year'"
     }
 ]
 
 
 ---
-Also! Needs php and/or other script that works as bridge from the Fronius inverter.
-I used som dirty-simple PHP for the 'watt.php';
-
-<?php
-$inverterDataURL = "http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi";
-$inverterJSON = file_get_contents($inverterDataURL);
-$inverterData = json_decode($inverterJSON, true);
-$total = $inverterData["Body"]["Data"]["Site"]["E_Total"]/1000;
-$current = $inverterData["Body"]["Data"]["Site"]["P_PV"];
-$day = $inverterData["Body"]["Data"]["Site"]["E_Day"]/1000;
-echo '' . print_r($current, true) . '';
-?>
+THIS PLUGIN REQUIRES curl AND jq TO BE INSTALLED.
+---
