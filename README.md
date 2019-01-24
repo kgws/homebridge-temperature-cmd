@@ -28,3 +28,8 @@ just copy the first accesory and rename it eg. if you want Year Total (E_Year), 
         "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_Year'"
     }
 ]
+```
+
+
+Mine looks like this;
+![Screenshot](IMG_7964.jpg)
