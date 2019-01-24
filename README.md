@@ -30,6 +30,7 @@ just copy the first accesory and rename it eg. if you want Year Total (E_Year), 
 ]
 ```
 
+# Example
 
 Mine looks like this;
-![Screenshot](IMG_7964.png)
+![Screenshot](IMG_7964.PNG)
