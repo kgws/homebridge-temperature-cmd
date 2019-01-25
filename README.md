@@ -1,5 +1,5 @@
 # homebridge-symo-cmd
-homebridge-plugin for a quick and easy way to get readings from a Fronius Symo
+homebridge-plugin for a quick and easy way to get readings from a Fronius Symo for Apple HomeKit via homebridge.
 
 Inspired by homebridge-temperature-cmd
 
