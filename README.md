@@ -13,14 +13,14 @@ Inspired by homebridge-temperature-cmd
 # Configuration
 
 You can add more accessories of SymoCMD in the config.json for homebridge 
-just copy the first accesory and rename it eg. if you want Year Total (E_Year), Day Total (E_Day) and Current Watts (E_PV)
+just copy the first accesory and rename it eg. if you want Year Total (E_Year), Day Total (E_Day) and Current Watts (P_PV)
 
 ```
 "accessories": [
     {
         "accessory": "SymoCMD",
         "name": "Current kWh",
-        "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.E_PV'"
+        "command": "curl -s http://192.168.x.x/solar_api/v1/GetPowerFlowRealtimeData.fcgi | jq '.Body.Data.Site.P_PV'"
     },
     {
         "accessory": "SymoCMD",
