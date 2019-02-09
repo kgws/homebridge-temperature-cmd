@@ -2,7 +2,7 @@ var Service, Characteristic;
 var exec = require("child_process").exec;
 
 const DEF_MIN_LUX = 0,
-      DEF_MAX_LUX = 10000,
+      DEF_MAX_LUX = 10000;
       
 var temperatureService;
 var command;
